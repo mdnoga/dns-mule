@@ -1,10 +1,5 @@
 import pyshark, base64, base58
 
-#################
-# Basic         #
-# Decoder       #
-#################
-
 def Base58Decoder(text):
 	print('[+] Base58 decoded.')
 	return base58.b58decode(text)
@@ -50,7 +45,7 @@ decText = ''
 for qry in des:
 	decText += qry[1:-2]
 
-# Writing result to user's output file
+# Writing result to output file
 with open(FILE_OUTPUT, 'w') as wr:
 	wr.write(Base64Decoder(Base58Decoder(decText)))
 print(f'[+] Output to {FILE_OUTPUT}')
